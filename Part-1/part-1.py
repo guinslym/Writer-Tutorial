@@ -63,6 +63,7 @@ class Main(QtGui.QMainWindow):
         self.redoAction.setShortcut("Ctrl+Y")
         self.redoAction.triggered.connect(self.text.redo)
 
+        #Why it doesn't have self.
         bulletAction = QtGui.QAction(QtGui.QIcon("icons/bullet.png"),"Insert bullet List",self)
         bulletAction.setStatusTip("Insert bullet list")
         bulletAction.setShortcut("Ctrl+Shift+B")
@@ -73,6 +74,7 @@ class Main(QtGui.QMainWindow):
         numberedAction.setShortcut("Ctrl+Shift+L")
         numberedAction.triggered.connect(self.numberList)
 
+        #here we will put it ont the toolbar
         self.toolbar = self.addToolBar("Options")
 
         self.toolbar.addAction(self.newAction)
