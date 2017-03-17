@@ -76,6 +76,12 @@ class Main(QtWidgets.QMainWindow):
         self.serverAction.setShortcut("Ctrl+I")
         #self.serverAction.triggered.connect(self.text.redo)
 
+        self.helpAction = QtWidgets.QAction(QtGui.QIcon("icons/new.png"),"New",self)
+        self.helpAction.setShortcut("Ctrl+T")
+        self.helpAction.setStatusTip("help.")
+        self.helpAction.triggered.connect(self.getHelp)
+
+
         self.toolbar = self.addToolBar("Options")
 
         self.toolbar.addAction(self.newAction)
@@ -118,7 +124,7 @@ class Main(QtWidgets.QMainWindow):
       documentation = menubar.addMenu("Documentation")
       helpmenu = menubar.addMenu("Help")
 
-      helpmenu.addAction(self.getHelp)
+      helpmenu.addAction(self.helpAction)
       file.addAction(self.newAction)
       file.addAction(self.openAction)
       file.addAction(self.saveAction)
@@ -159,7 +165,7 @@ class Main(QtWidgets.QMainWindow):
         self.setWindowIcon(QtGui.QIcon("icons/icon.png"))
 
     def getHelp(self):
-        print('Hello')
+        print('Getting Help action')
 
     def new(self):
 
