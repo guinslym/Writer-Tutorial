@@ -76,13 +76,13 @@ class Main(QtWidgets.QMainWindow):
         self.serverAction.setShortcut("Ctrl+I")
         #self.serverAction.triggered.connect(self.text.redo)
 
-        self.helpAction = QtWidgets.QAction(QtGui.QIcon("icons/new.png"),"New",self)
+        self.helpAction = QtWidgets.QAction("Help on Odesi",self)
         self.helpAction.setShortcut("Ctrl+T")
         self.helpAction.setStatusTip("help.")
         self.helpAction.triggered.connect(self.getHelp)
 
 
-        self.publish_it_Action = QtWidgets.QAction(QtGui.QIcon("icons/new.png"),"New",self)
+        self.publish_it_Action = QtWidgets.QAction("Publish",self)
         self.publish_it_Action.setShortcut("Ctrl+T")
         self.publish_it_Action.setStatusTip("help.")
         self.publish_it_Action.triggered.connect(self.publishDataset)
