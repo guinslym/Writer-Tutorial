@@ -82,6 +82,11 @@ class Main(QtWidgets.QMainWindow):
         self.helpAction.triggered.connect(self.getHelp)
 
 
+        self.publish_it_Action = QtWidgets.QAction(QtGui.QIcon("icons/new.png"),"New",self)
+        self.publish_it_Action.setShortcut("Ctrl+T")
+        self.publish_it_Action.setStatusTip("help.")
+        self.publish_it_Action.triggered.connect(self.publishDataset)
+
         self.toolbar = self.addToolBar("Options")
 
         self.toolbar.addAction(self.newAction)
@@ -119,12 +124,13 @@ class Main(QtWidgets.QMainWindow):
       file = menubar.addMenu("File")
       edit = menubar.addMenu("Edit")
       view = menubar.addMenu("View")
-      preferences = menubar.addMenu("Server")
+      server = menubar.addMenu("Server")
       preferences = menubar.addMenu("Preferences")
       documentation = menubar.addMenu("Documentation")
       helpmenu = menubar.addMenu("Help")
 
       helpmenu.addAction(self.helpAction)
+      server.addAction(self.publish_it_Action)
       file.addAction(self.newAction)
       file.addAction(self.openAction)
       file.addAction(self.saveAction)
@@ -166,6 +172,9 @@ class Main(QtWidgets.QMainWindow):
 
     def getHelp(self):
         print('Getting Help action')
+
+    def publishDataset(self):
+        print('Publishing the dataset')
 
     def new(self):
 
