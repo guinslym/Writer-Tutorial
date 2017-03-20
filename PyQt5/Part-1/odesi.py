@@ -13,6 +13,9 @@ from PyQt5 import QtPrintSupport
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtCore import Qt
 
+#pip install qdarkstyle
+#import qdarkstyle
+
 
 class Main(QtWidgets.QMainWindow):
 
@@ -157,7 +160,7 @@ class Main(QtWidgets.QMainWindow):
         self.setCentralWidget(self.text)
 
         # Initialize a statusbar for the window
-        self.statusbar = self.statusBar()
+        self.statusbar = self.statusBar().showMessage('ODESI Metadata Editor')
 
         # If the cursor position changes, call the function that displays
         # the line and column number
@@ -166,7 +169,7 @@ class Main(QtWidgets.QMainWindow):
         # x and y coordinates on the screen, width, height
         self.setGeometry(100,100,1030,800)
 
-        self.setWindowTitle("Writer")
+        self.setWindowTitle("ODESI Metadata Editor")
 
         self.setWindowIcon(QtGui.QIcon("icons/icon.png"))
 
@@ -235,6 +238,8 @@ class Main(QtWidgets.QMainWindow):
 def main():
 
     app = QtWidgets.QApplication(sys.argv)
+    #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    app.setStyleSheet(theme.load_stylesheet_pyqt5())
 
     main = Main()
     main.show()
