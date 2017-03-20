@@ -239,6 +239,7 @@ def main():
 
     app = QtWidgets.QApplication(sys.argv)
     #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    app.setStyleSheet(theme.load_stylesheet_pyqt5())
 
     main = Main()
     main.show()
