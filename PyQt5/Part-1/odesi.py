@@ -189,7 +189,9 @@ class Main(QtWidgets.QMainWindow):
         # Get filename and show only .sav *.py *.xml files
         #PYQT5 Returns a tuple in PyQt5, we only need the filename
         #self.filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File',".","(*.xml)")[0]
-        self.filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Open file', '.', "DDI file (*.xml *.sav *.py)")[0]
+        self.filename = QtWidgets.QFileDialog.getOpenFileName(
+            self, 'Open file', '.', "DDI file (*.xml *.sav *.py)"
+            )[0]
 
         if self.filename:
             with open(self.filename,"rt") as file:
@@ -239,7 +241,7 @@ def main():
 
     app = QtWidgets.QApplication(sys.argv)
     #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
-    app.setStyleSheet(theme.load_stylesheet_pyqt5())
+    #app.setStyleSheet(theme.load_stylesheet_pyqt5())
 
     main = Main()
     main.show()
